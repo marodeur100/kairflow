@@ -20,7 +20,8 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 # Jupyter Installation
 * Follow the steps of the [Installation Guide] (https://linuxhint.com/install-jupyter-notebook-ubuntu/)
 
-# Kubernetes Integration
+# Kubernetes Python Install
+* Follow the steps of the [Installation Guide] (https://github.com/kubernetes-client/Python)
 
 # Spark Integration
 

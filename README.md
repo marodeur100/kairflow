@@ -19,16 +19,19 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 
 # Jupyter Installation (optional)
 * Follow the steps of the [Installation Guide] (https://linuxhint.com/install-jupyter-notebook-ubuntu/)
+* nohup jupyter notebook &
 
 # Kubernetes Cluster 
 * Follow Kubernetes for Python [Installation Guide] (https://github.com/kubernetes-client/Python)
-* Install kubectl: sudo snap install kubectl --classic
+* Install [Minikube](http://www.g33knotes.org/2016/09/using-minikube-for-kubernetes.html)
 * 
 
 # Kubernetes on Airflow Install
 * git clone https://github.com/apache/incubator-airflow.git
 * cd incubator-airflow
 * sed -ie "s/KubernetesExecutor/LocalExecutor/g" scripts/ci/kubernetes/kube/configmaps.yaml
+* export AIRFLOW_GPL_UNIDECODE=yes
+* sudo chown -R :$GROUP /home/osboxes/.kube
 * ./scripts/ci/kubernetes/docker/build.sh
 * ./scripts/ci/kubernetes/kube/deploy.sh
 

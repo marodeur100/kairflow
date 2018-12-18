@@ -17,13 +17,20 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Run example by using Make run
 * Access airflow console by opening (http://localhost:8080) within your VM
 
-# Jupyter Installation
+# Jupyter Installation (optional)
 * Follow the steps of the [Installation Guide] (https://linuxhint.com/install-jupyter-notebook-ubuntu/)
 
-# Kubernetes Python Install
-* Follow the steps of the [Installation Guide] (https://github.com/kubernetes-client/Python)
+# Kubernetes Cluster 
+* Follow Kubernetes for Python [Installation Guide] (https://github.com/kubernetes-client/Python)
+* Install kubectl: sudo snap install kubectl --classic
+* 
 
-# Spark Integration
+# Kubernetes on Airflow Install
+* git clone https://github.com/apache/incubator-airflow.git
+* cd incubator-airflow
+* sed -ie "s/KubernetesExecutor/LocalExecutor/g" scripts/ci/kubernetes/kube/configmaps.yaml
+* ./scripts/ci/kubernetes/docker/build.sh
+* ./scripts/ci/kubernetes/kube/deploy.sh
 
 # Example
 

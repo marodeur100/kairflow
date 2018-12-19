@@ -10,7 +10,7 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 # Docker Installation
 * sudo apt-get install curl
 * Follow the steps of the [Installation Guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
-* Be careful, currently only Docker-CE version 18.06.1-ce is working fine
+* Be careful, currently only Docker-CE version 18.06.1-ce is working fine: 
     sudo apt-get install docker-ce=18.06.1~ce~3-0~ubuntu
 * Install [docker-compose] (https://docs.docker.com/compose/install/#install-compose) 
 
@@ -20,29 +20,26 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Follow the steps of the [Installation Guide](https://computingforgeeks.com/how-to-install-minikube-on-ubuntu-18-04/)
 * Start Minikube with: sudo minikube start --vm-driver=none
 
-# docker-airflow
+# docker-airflow (optional)
 * git clone https://github.com/marodeur100/kairflow.git 
 * Original [Installation Guide](https://github.com/puckel/docker-airflow) just FYI
 * Run example by using Make run
 * Access airflow console by opening (http://localhost:8080) within your VM
 
-# Jupyter Installation (optional)
+# Python / Jupyter Installation 
 * Follow the steps of the [Installation Guide] (https://linuxhint.com/install-jupyter-notebook-ubuntu/)
 * nohup jupyter notebook &
 
-# Kubernetes Cluster 
-* Follow Kubernetes for Python [Installation Guide] (https://github.com/kubernetes-client/Python)
-* Install [Minikube](http://www.g33knotes.org/2016/09/using-minikube-for-kubernetes.html)
-* 
-
 # Kubernetes on Airflow Install
 * git clone https://github.com/apache/incubator-airflow.git
+* sudo apt-get install python-setuptools
 * cd incubator-airflow
 * sed -ie "s/KubernetesExecutor/LocalExecutor/g" scripts/ci/kubernetes/kube/configmaps.yaml
 * export AIRFLOW_GPL_UNIDECODE=yes
 * sudo chown -R :$GROUP /home/osboxes/.kube
 * ./scripts/ci/kubernetes/docker/build.sh
 * ./scripts/ci/kubernetes/kube/deploy.sh
+
 
 
 # Example

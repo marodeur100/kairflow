@@ -23,10 +23,10 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Start Minikube with: sudo minikube start --vm-driver=none
 
 # Sometimes restart of Minikube is required
-cd /etc/kubernetes/ &&
-sudo rm *.conf &&
-cd &&
-sudo minikube delete # may also need rm -rf ~/.minikube &&
+cd /etc/kubernetes/ && \
+sudo rm *.conf && \
+cd && \
+sudo minikube delete # may also need rm -rf ~/.minikube && \
 sudo minikube start --vm-driver=none
 
 # Python / Jupyter Installation 
@@ -38,7 +38,6 @@ sudo minikube start --vm-driver=none
 * sudo apt-get install socat
 * Fix missing python-setuptools: sudo apt-get install python-setuptools
 * cd incubator-airflow
-* sed -ie "s/KubernetesExecutor/LocalExecutor/g" scripts/ci/kubernetes/kube/configmaps.yaml
 * export AIRFLOW_GPL_UNIDECODE=yes
 * sudo chown -R :$GROUP /home/osboxes/.kube4
 * Fix the issue that apt-get does not work within docker: sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf

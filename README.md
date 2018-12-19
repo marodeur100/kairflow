@@ -5,6 +5,7 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Download and install [Virtual Box](https://www.virtualbox.org/)
 * Download Ubuntu 18.04 64Bit VDI [Image](https://www.osboxes.org/)
 * Create New Linux Ubuntu 64 Bit VM in your VirtualBox and use VDI Image as Filesystem
+* Assigne 10GB RAM and 4 CPU minimum 
 * Start VM and open a console
 * Correct keyboard layout: sudo dpkg-reconfigure keyboard-configuration
 
@@ -48,6 +49,8 @@ sudo minikube start --vm-driver=none
 * Fix the issue that apt-get does not work within docker: sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 * ./scripts/ci/kubernetes/docker/build.sh
 * ./scripts/ci/kubernetes/kube/deploy.sh
+* After you should receive an Airflow ready-message
+* 
 
 # Example
 

@@ -21,6 +21,13 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Follow the steps of the [Installation Guide](https://computingforgeeks.com/how-to-install-minikube-on-ubuntu-18-04/)
 * Start Minikube with: sudo minikube start --vm-driver=none
 
+# Restart Minikube
+cd /etc/kubernetes/
+sudo rm *.conf
+cd
+sudo minikube delete # may also need rm -rf ~/.minikube
+sudo minikube start --vm-driver=none
+
 # docker-airflow (optional)
 * git clone https://github.com/marodeur100/kairflow.git 
 * Original [Installation Guide](https://github.com/puckel/docker-airflow) just FYI

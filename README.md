@@ -22,18 +22,12 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Follow the steps of the [Installation Guide](https://computingforgeeks.com/how-to-install-minikube-on-ubuntu-18-04/)
 * Start Minikube with: sudo minikube start --vm-driver=none
 
-# Restart Minikube
-cd /etc/kubernetes/
-sudo rm *.conf
-cd
-sudo minikube delete # may also need rm -rf ~/.minikube
+# Sometimes restart of Minikube is required
+cd /etc/kubernetes/ &&
+sudo rm *.conf &&
+cd &&
+sudo minikube delete # may also need rm -rf ~/.minikube &&
 sudo minikube start --vm-driver=none
-
-# docker-airflow (optional)
-* git clone https://github.com/marodeur100/kairflow.git 
-* Original [Installation Guide](https://github.com/puckel/docker-airflow) just FYI
-* Run example by using Make run
-* Access airflow console by opening (http://localhost:8080) within your VM
 
 # Python / Jupyter Installation 
 * Follow the steps of the [Installation Guide] (https://linuxhint.com/install-jupyter-notebook-ubuntu/)
@@ -41,6 +35,7 @@ sudo minikube start --vm-driver=none
 
 # Airflow on Minicube Install
 * git clone https://github.com/apache/incubator-airflow.git
+* sudo apt-get install socat
 * Fix missing python-setuptools: sudo apt-get install python-setuptools
 * cd incubator-airflow
 * sed -ie "s/KubernetesExecutor/LocalExecutor/g" scripts/ci/kubernetes/kube/configmaps.yaml
@@ -50,7 +45,9 @@ sudo minikube start --vm-driver=none
 * ./scripts/ci/kubernetes/docker/build.sh
 * ./scripts/ci/kubernetes/kube/deploy.sh
 * After you should receive an Airflow ready-message
-* 
+* kubectl port-forward $WEB 8080:8080
+* Open [airflow](http://localhost:8080) and use airflow/airflow as login
+
 
 # Example
 

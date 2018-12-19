@@ -6,6 +6,7 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Download Ubuntu 18.04 64Bit VDI [Image](https://www.osboxes.org/)
 * Create New Linux Ubuntu 64 Bit VM in your VirtualBox and use VDI Image as Filesystem
 * Start VM and open a console
+* Correct keyboard layout: sudo dpkg-reconfigure keyboard-configuration
 
 # Docker Installation
 * sudo apt-get install curl

@@ -39,8 +39,8 @@ sudo minikube start --vm-driver=none
 * cd kube-airflow
 * kubectl create -f airflow.all.yaml
 * export AIRFLOW_GPL_UNIDECODE=yes
-* Find out which pod hosts the airflow webserver: sudo kubectl get pods
-* sudo kubectl port-forward $WEB 8080:8080
+* Find out which pod hosts the airflow webserver <webpod id>: sudo kubectl get pods
+* sudo kubectl port-forward <webpod id> 8080:8080
 * Open [airflow](http://localhost:8080) 
 
 

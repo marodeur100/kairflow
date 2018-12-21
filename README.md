@@ -34,18 +34,13 @@ sudo minikube start --vm-driver=none
 * nohup jupyter notebook &
 
 # Airflow on Minicube Install
-* git clone https://github.com/apache/incubator-airflow.git
 * sudo apt-get install socat
-* Fix missing python-setuptools: sudo apt-get install python-setuptools
-* cd incubator-airflow
+* git clone https://github.com/mumoshu/kube-airflow
+* cd kube-airflow
+* kubectl create -f airflow.all.yaml
 * export AIRFLOW_GPL_UNIDECODE=yes
-* sudo chown -R :$GROUP /home/osboxes/.kube4
-* Fix the issue that apt-get does not work within docker: sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
-* ./scripts/ci/kubernetes/docker/build.sh
-* ./scripts/ci/kubernetes/kube/deploy.sh
-* After you should receive an Airflow ready-message
-* kubectl port-forward $WEB 8080:8080
-* Open [airflow](http://localhost:8080) and use airflow/airflow as login
+* sudo kubectl port-forward $WEB 8080:8080
+* Open [airflow](http://localhost:8080) 
 
 
 # Example

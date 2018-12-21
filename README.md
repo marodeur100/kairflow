@@ -17,9 +17,9 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Install [docker-compose] (https://docs.docker.com/compose/install/#install-compose) 
 
 # Install Minikube
-* sudo apt-get install curl
 * Install [VirtualBox](https://websiteforstudents.com/installing-virtualbox-5-2-ubuntu-17-04-17-10)
 * Follow the steps of the [Installation Guide](https://computingforgeeks.com/how-to-install-minikube-on-ubuntu-18-04/)
+* sudo snap install kubectl --classic
 * Start Minikube with: sudo minikube start --vm-driver=none
 
 # Sometimes restart of Minikube is required

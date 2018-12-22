@@ -53,6 +53,9 @@ RUN set -ex \
     && useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow \
     && pip install -U pip setuptools wheel \
     && pip install pytz \
+    && pip install kubernetes \
+    && pip install cryptography \
+    && pip install psycopg2-binary==2.7.4 \
     && pip install pyOpenSSL \
     && pip install ndg-httpsclient \
     && pip install pyasn1 \

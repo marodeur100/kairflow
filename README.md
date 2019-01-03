@@ -14,14 +14,14 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Follow the steps of the [Installation Guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
 * Be careful, currently only Docker-CE version 18.06.1-ce is working fine: 
     sudo apt-get install docker-ce=18.06.1~ce~3-0~ubuntu
-* Install [docker-compose] (https://docs.docker.com/compose/install/#install-compose) 
+* Install [docker-compose](https://docs.docker.com/compose/install/#install-compose) 
 
 # Install Minikube
 * Install [VirtualBox](https://websiteforstudents.com/installing-virtualbox-5-2-ubuntu-17-04-17-10)
 * Follow the steps of the [Installation Guide](https://computingforgeeks.com/how-to-install-minikube-on-ubuntu-18-04/)
 * sudo snap install kubectl --classic
 * Start Minikube with: sudo minikube start --vm-driver=none
-* In case of problems with [DNS CrashLoop] (https://stackoverflow.com/questions/53075796/coredns-pods-have-crashloopbackoff-or-error-state/53414041#53414041)
+* In case of problems with [DNS CrashLoop](https://stackoverflow.com/questions/53075796/coredns-pods-have-crashloopbackoff-or-error-state/53414041#53414041)
 
 # Sometimes restart of Minikube is required
 cd /etc/kubernetes/ && \

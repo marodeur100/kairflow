@@ -21,6 +21,7 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Follow the steps of the [Installation Guide](https://computingforgeeks.com/how-to-install-minikube-on-ubuntu-18-04/)
 * sudo snap install kubectl --classic
 * Start Minikube with: sudo minikube start --vm-driver=none
+* In case of problems with [DNS CrashLoop] (https://stackoverflow.com/questions/53075796/coredns-pods-have-crashloopbackoff-or-error-state/53414041#53414041)
 
 # Sometimes restart of Minikube is required
 cd /etc/kubernetes/ && \

@@ -44,7 +44,10 @@ sudo minikube start --vm-driver=none
 * sudo kubectl port-forward <webpod id> 8080:8080
 * Open [airflow](http://localhost:8080) 
 
-
-# Example
+# Talend Install
+* Install [JDK](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html)
+* Download and unzip [TOS](https://de.talend.com/products/data-integration-manuals-release-notes/)
+* Install GTK2: sudo apt-get install libgtk2.0
+* Start TOS
 
 

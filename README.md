@@ -10,11 +10,21 @@ This Demo will show you how Airflow, Kubernetes and Docker can be assembled for 
 * Correct keyboard layout: sudo dpkg-reconfigure keyboard-configuration
 
 # Docker Installation
-* sudo apt-get install curl
-* Follow the steps of the [Installation Guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
-* Be careful, currently only Docker-CE version 18.06.1-ce is working fine: 
-    sudo apt-get install docker-ce=18.06.1~ce~3-0~ubuntu
-* Install [docker-compose](https://docs.docker.com/compose/install/#install-compose) 
+* Follow steps 
+sudo apt-get install curl
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt-get install docker-ce=18.06.1~ce~3-0~ubuntu
+sudo usermod -aG docker ${USER}
+su - ${USER}
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+* Docker steps taken from [Installation Guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
+* Docker-Compose steps taken from [docker-compose](https://docs.docker.com/compose/install/#install-compose) 
 
 # Install Minikube
 * Install [VirtualBox](https://websiteforstudents.com/installing-virtualbox-5-2-ubuntu-17-04-17-10)
